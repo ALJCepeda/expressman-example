@@ -5,7 +5,11 @@ import express = require('express');
 publish(express(), {
   pattern:'src/routes/**.ts',
   swagger: {
-    path: '/swagger'
+    path: '/swagger',
+    define: {
+      title: 'Expressman Example',
+      description: 'This is a demo app show casing expressman library'
+    }
   },
   onUncaughtException(container, error) {
     console.log(error);

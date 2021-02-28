@@ -1,15 +1,18 @@
 import {injectable} from "expressman";
 
-export interface Member {
-  firstname:string;
-  lastname:string;
+export class Member {
+  constructor(
+    public firstname: string,
+    public lastname: string
+  ) {
+  }
 }
 
 @injectable()
 export default class MemberRepository {
   getMembers():Member[] {
     return [
-      { firstname:'Alfred', lastname:'Cepeda' }
+      new Member('Alfred', 'Cepeda')
     ];
   }
 }
